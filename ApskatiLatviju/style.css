@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+:root {
+    --maincolor: #ffffff;
+    --secondary: #F9C784;
+    --highlight: #fcaf58;
+    --background: #fff9f1;
+}
+
+*::selection {
+    background: var(--secondary);
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+}
+
+p {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    min-height: 50vh;
+    padding: 5rem 7%;
+}
+
+.add {
+    padding: .6rem;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 10rem;
+    text-align: center;
+}
+
+/*------Header------*/
+.login-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    padding: .6rem;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 0.7rem 7%;
+}
+
+#banner {
+background-color: var(--secondary);
+width: 100%;
+height: 20rem;
+transform: translateY(6px);
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li{
+    margin-left: 2.5rem;
+}
+
+header nav ul li a{
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: var(--maincolor);
+    border-bottom: .3rem solid var(--maincolor);
+    padding: 1.1rem 0;
+}
+
+
+/*------Home Page------*/
+
+#sakums {
+    text-align: center;
+    background-color: var(--maincolor);
+    width: 90%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid #eee;
+    margin-bottom: 8rem;
+  }
+  
+  .slider {
+    display: flex;
+    width: 300%;
+    height: 30rem;
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  .slider img {
+    width: 33.333%;
+  }
+  
+  .navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .prev,
+  .next {
+    background-color: #444;
+    margin: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: .5rem;
+    opacity: 50%;
+    font-size: 1rem;
+    color: var(--maincolor);
+
+    cursor: pointer;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    opacity: 90%;
+  }
+
+  #jaunAkt {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .JA-post {
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .JA-post img {
+    width: 100%;
+    height: 20rem;
+    border-radius: .5rem;
+  }
+  
+  .JA-post h2 {
+    margin-top: 0.5rem;
+  }
+  
+  .JA-post p {
+    margin-bottom: 0;
+  }
+/*------Offers------*/
+
+#piedavajumi {
+    background-color: var(--maincolor);
+    width: 90%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+    text-align: center;
+}
+
+#post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    
+  }
+  
+  .post {
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .post .btn-signup {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: #444;
+    padding: 1rem;
+    border-radius: .5rem;
+    opacity: 90%;
+    font-size: 1.5rem;
+    color: var(--maincolor);
+  }
+  
+  .post:hover .btn-signup {
+    display: block;
+  }
+
+  .post:hover img {
+    opacity: 60%;
+    filter: blur(.1rem);
+  }
+  
+  .post img {
+    width: 100%;
+    height: 20rem;
+    border-radius: .5rem;
+  }
+  
+  .post h2 {
+    margin-top: 0.5rem;
+  }
+  
+  .post p {
+    margin-bottom: 0;
+  }
+
+/*------News------*/
+
+#news {
+    background-color: var(--maincolor);
+    width: 90%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+}
+  
+#news .news-post  {
+    background-color:#eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+  
+#news h1{
+    text-align: center;
+    margin: 1rem;
+}
+
+#news .news-post .news-text {
+    padding: 2rem 0 0 1rem;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+#news #aktEdit {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    transform: translateX(-50%);
+    padding: .6rem;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/*------About us------*/
+#aboutus {
+    background-color: var(--maincolor);
+    width: 90%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+}
+
+#aboutus h1{
+    text-align: center;
+    margin: 1rem;
+}
+
+.split50 p{
+    background-color: #eee;
+    border-radius: .5rem;
+    padding: 2rem;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+.split50 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*------Footer------*/
+
+footer {
+    width: 100%;
+    background: var(--secondary);
+    z-index: 1;
+    padding: 0.7rem 7%;
+}
+
+footer #boxes {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer #boxes li {
+    margin: 2.5rem;
+}
+
+footer #boxes p {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2.5rem;
+}
+
+footer .links {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 1rem;
+    list-style: none;
+}
+
+footer .links a{
+    color: #333;
+    font-size: 1.5rem;
+    margin: 1rem;
+    list-style: none;
+}
+
+footer .links li:hover {
+    color: var(--maincolor);
+}
+
+footer .links a:hover {
+    color: var(--maincolor);
+}
+
+footer p {
+    text-align: center;
+}
