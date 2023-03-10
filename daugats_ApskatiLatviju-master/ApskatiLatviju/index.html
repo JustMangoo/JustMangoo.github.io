@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apskati Latviju</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    
+</head>
+
+<body>
+
+    <button id="login-button"><i class="fa-solid fa-lock"></i></button>
+    <button id="user-button"><i class="fa-solid fa-user"></i></button>
+    <img id="banner" src="Images/WebBanner.jpg" alt="WebBanner">
+    <header>
+        
+        <div class="logo"><img src="images/logo.png" alt="Logo">Apskati Latviju</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="./index.html">Sākums</a></li>
+                <li><a href="./piedavajumi.html">Piedāvājumi</a></li>
+                <li><a href="./aktualitates.html">Aktualitātes</a></li>
+                <li><a href="./parmums.html">Par mums</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="login-popup" style="display: none;">
+        <h2>Login</h2>
+        <form>
+          <div class="form-group">
+            <label for="username">Lietotājvārds</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Parole</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Ieiet</button>
+        </form>
+    </div>
+    
+
+    <section id="sakums">
+            <h1>Populārākie piedāvājumi</h1>
+            <div class="slider-container">
+                <div class="slider">
+                  <img src="Images/Liepaja.jpg" alt="image1">
+                  <img src="Images/jelgava.jpg" alt="image2">
+                  <img src="Images/TopIMG.jpg" alt="image3">
+                </div>
+                <div class="navigation">
+                  <button class="prev">&#60;</button>
+                  <button class="next">&#62;</button>
+                </div>
+              </div>
+              <h1>Jaunākās aktualitates</h1>
+              <div id="jaunAkt">
+                <div class="JA-post">
+                    <img src="Images/Liepaja.jpg" alt="Post Image">
+                    <h2>Aktualitāte 1</h2>
+                </div>
+                <div class="JA-post">
+                    <img src="Images/Liepaja.jpg" alt="Post Image">
+                    <h2>Aktualitāte 2</h2>
+                </div>
+                <div class="JA-post">
+                    <img src="Images/Liepaja.jpg" alt="Post Image">
+                    <h2>Aktualitāte 3</h2>
+                </div>
+                </div>
+    </section>
+
+
+
+    <footer>
+        <ul id="boxes">
+            <li>
+                <p>Kontakti</p>
+                <ul class="links">
+                    <li>+371 26 123 421</li>
+                    <li>info@apskatilatviju.lv</li>
+                    <li>Latvija, Rīga</li>
+                </ul>
+            </li>
+            <li>
+                <p>Pieseko</p>
+                <ul class="links">
+                    <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </li>
+        </ul>
+        <p>Aleksis Daugats &copy; 2023</p>
+    </footer>
+
+    <script src="carousel.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
