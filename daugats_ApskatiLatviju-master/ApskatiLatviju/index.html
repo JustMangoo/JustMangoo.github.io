@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <button id="login-button"><i class="fa-solid fa-lock"></i></button>
     <button id="user-button"><i class="fa-solid fa-user"></i></button>
     <img id="banner" src="Images/WebBanner.jpg" alt="WebBanner">
@@ -29,6 +28,20 @@
         </nav>
     </header>
 
+    <div class="burger">
+        <div class="logo"><img src="images/logo.png" alt="Logo">Apskati Latviju</div>
+        <div id="myLinks">
+            <a href="./index.html">Sākums</a>
+            <a href="./piedavajumi.html">Piedāvājumi</a>
+            <a href="./aktualitates.html">Aktualitātes</a>
+            <a href="./parmums.html">Par mums</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="burger()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    
     <div id="login-popup" style="display: none;">
         <h2>Login</h2>
         <form>
@@ -43,7 +56,15 @@
           <button type="submit">Ieiet</button>
         </form>
     </div>
-    
+
+    <div id="user-panel">
+        <p>Vārds Uzvārds</p>
+        <ul>
+            <li><button id="change-password-btn">Mainīt paroli</button></li>
+            <li><button id="edit-mods-btn">Rediģēt moderātorus</button></li>
+            <li><button id="logout-btn">Iziet</button></li>
+        </ul>
+    </div>
 
     <section id="sakums">
             <h1>Populārākie piedāvājumi</h1>
@@ -101,5 +122,7 @@
 
     <script src="carousel.js"></script>
     <script src="login.js"></script>
+    <script src="settings.js"></script>
+    <script src="burger.js"></script>
 </body>
 </html>
