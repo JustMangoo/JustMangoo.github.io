@@ -3,7 +3,11 @@
 ?>
 
     <section id="piedavajumi">
+
+    <?php if (isset($_SESSION["lietotajvards"])) {?>
         <div class="add">Pievienot <i class="fa-solid fa-plus"></i></div>
+<?php } ?>
+
         <h1>Piedāvājumi</h1>
         <div id="post-grid">
             <div class="post">

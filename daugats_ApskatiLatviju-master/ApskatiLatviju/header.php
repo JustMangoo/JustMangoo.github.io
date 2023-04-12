@@ -14,6 +14,15 @@
 <body>
 <div class="info">
 
+<script>
+
+function login() {
+
+document.getElementById("login-button").style.display = "none";
+}
+
+</script>
+
 <?php
     if(isset($_POST["autorizeties"])){
         require("faili/connect_db.php");
@@ -28,7 +37,7 @@
             while($row = mysqli_fetch_array($rezultats)){
                 if(password_verify($Parole, $row["Parole"])){
                     $_SESSION["lietotajvards"] = $Lietotajvards;
-                    header("location:parmums.php");
+
                 }else{
                     echo "Nepareizs lietotājvārds vai parole!";
                 }
@@ -47,15 +56,23 @@
     ?>
 
 </div>
-    <button id="login-button"><i class="fa-solid fa-lock"></i></button>
+
+<?php if (isset($_SESSION["lietotajvards"])) {?>
     <button id="user-button"><i class="fa-solid fa-user"></i></button>
+<?php } else {?>
+    <button id="login-button"><i class="fa-solid fa-lock"></i></button>
+<?php } ?>
     <img id="banner" src="Images/WebBanner.jpg" alt="WebBanner">
     <header>
         
         <div class="logo"><img src="images/logo.png" alt="Logo">Apskati Latviju</div>
         <nav class="nav">
             <ul>
+            <?php if (isset($_SESSION["lietotajvards"])) {?>
+                <li><a href="./pieteikumi.php">Pieteikumi</a></li>
+            <?php } else {?>
                 <li><a href="./index.php">Sākums</a></li>
+            <?php } ?>
                 <li><a href="./piedavajumi.php">Piedāvājumi</a></li>
                 <li><a href="./aktualitates.php">Aktualitātes</a></li>
                 <li><a href="./parmums.php">Par mums</a></li>
@@ -79,7 +96,7 @@
     
     <div id="login-popup" style="display: none;">
         <h2>Login</h2>
-        <form action="" method="post">
+        <form id="login_form" action="" method="post">
           <div class="form-group">
             <label for="username">Lietotājvārds</label>
             <input type="text" id="lietotajs" name="lietotajs" required>

@@ -80,7 +80,7 @@ section {
 
 #user-button {
     position: absolute;
-    top: 3rem;
+    top: 1rem;
     right: 1.5rem;
     padding: .6rem;
     background-color: var(--secondary);
