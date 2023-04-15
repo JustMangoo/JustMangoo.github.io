@@ -24,5 +24,6 @@
     <script src="login.js"></script>
     <script src="settings.js"></script>
     <script src="burger.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
