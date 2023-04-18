@@ -387,14 +387,14 @@ button[type="submit"]:hover {
 #user-panel {
   display: none;
   position: absolute;
-  top: 3rem;
+  top: 1rem;
   right: 1.5rem;
   padding: .6rem;
   background-color: var(--maincolor);
   color: #000;
   border: none;
   border-radius: .3rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   z-index: 2;
   box-shadow: 0 0 1rem 0px rgba(0,0,0,0.2);
 }
@@ -415,9 +415,18 @@ button[type="submit"]:hover {
 
 #user-panel button {
   background-color: var(--maincolor);
+  color: #000;
   cursor: pointer;
+  font-size: 1rem;
 }
 
+#user-panel a {
+  background-color: var(--maincolor);
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+}
 
 /*------Home Page------*/
 
@@ -616,6 +625,21 @@ button[type="submit"]:hover {
     cursor: pointer;
     font-size: 1rem;
 }
+
+#news #aktDelete {
+  position: absolute;
+  bottom: 2rem;
+  left: 4.6rem;
+  transform: translateX(-50%);
+  padding: .6rem;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
 
 #news img {
   width: 40rem;

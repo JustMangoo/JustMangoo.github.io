@@ -11,9 +11,10 @@
                 $virsrakstsAkt = $_POST['virsrakstsAkt'];
                 $aprakstsAkt = $_POST['aprakstsAkt'];
                 $attelsAkt = $_POST['attelsAkt'];
+                $publicetajs = $_SESSION['Lietotajvards'];
 
                     if(!empty($virsrakstsAkt) && !empty($aprakstsAkt) && !empty($attelsAkt)){
-                        $pievienot_aktualitates_SQL = "INSERT INTO aktualitates(Virsraksts, Apraksts, Attels, Publicetajs, Datums) VALUES ('$virsrakstsAkt', '$aprakstsAkt', '$attelsAkt', 'Steve Test', now())";
+                        $pievienot_aktualitates_SQL = "INSERT INTO aktualitates(Virsraksts, Apraksts, Attels, Publicetajs, Datums) VALUES ('$virsrakstsAkt', '$aprakstsAkt', '$attelsAkt', '$publicetajs', now())";
 
                         if(mysqli_query($savienojums, $pievienot_aktualitates_SQL)){
                             echo "<div class='green_alert'>Pievienošana ir noritējusi veiksmīgi!</div>";
@@ -51,12 +52,33 @@
                 <img src='{$ieraksts['Attels']}' alt='News Image'>
             </div>";
             if (isset($_SESSION["Lietotajvards"])) {
-            echo "<button id='aktEdit'><i class='fa-solid fa-pen'></i></button>";
+            echo "
+            <form action='aktualitates_edit.php' method='post' id='aktEdit'>
+                <button value='{$ieraksts['aktualitates_id']}' type='submit'  name='edit'><i class='fa-solid fa-pen'></i></button>
+            </form>
+            <form action='' method='post' id='aktDelete'>
+                <button value='{$ieraksts['aktualitates_id']}' type='submit' name='delete'><i class='fa-solid fa-trash'></i></button>
+            </form>";
+
             }
             echo "</div>";
                 }
             }else{
                 echo "<div class='red_alert'>Nav nevienas aktualitates!</div>";
+            }
+
+            if(isset($_POST['delete'])){
+
+                $ID = $_POST['delete'];
+  
+                        $SQL = "DELETE FROM aktualitates WHERE aktualitates_id = $ID";
+  
+                        if(mysqli_query($savienojums, $SQL)){
+                            echo "<div class='green_alert'>Dzēšana ir noritējusi veiksmīgi!</div>";
+                        }else{
+                            echo "<div >Dzēšana nav izdevusies! Mēģiniet vēlreiz!</div>";
+                        }
+  
             }
         ?>
         

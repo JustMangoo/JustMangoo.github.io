@@ -6,9 +6,21 @@
             <h1>Populārākie piedāvājumi</h1>
             <div class="slider-container">
                 <div class="slider">
-                  <img src="Images/Liepaja.jpg" alt="image1">
-                  <img src="Images/jelgava.jpg" alt="image2">
-                  <img src="Images/TopIMG.jpg" alt="image3">
+<?php
+                require("faili/connect_db.php");
+
+                $piedavajumiVaicajums = "SELECT * FROM piedavajumi LIMIT 3";
+                $atlasaPiedavajumi = mysqli_query($savienojums, $piedavajumiVaicajums);
+
+                if(mysqli_num_rows($atlasaPiedavajumi) > 0 ){
+                    while($ieraksts = mysqli_fetch_assoc($atlasaPiedavajumi)){
+                        echo "
+                        <img src='{$ieraksts['Attels']}' alt='image'>
+                    ";
+                    }
+                }
+?>
+
                 </div>
                 <div class="navigation">
                   <button class="prev">&#60;</button>
@@ -17,18 +29,24 @@
               </div>
               <h1>Jaunākās aktualitates</h1>
               <div id="jaunAkt">
-                <div class="JA-post">
-                    <img src="Images/Liepaja.jpg" alt="Post Image">
-                    <h2>Aktualitāte 1</h2>
-                </div>
-                <div class="JA-post">
-                    <img src="Images/Liepaja.jpg" alt="Post Image">
-                    <h2>Aktualitāte 2</h2>
-                </div>
-                <div class="JA-post">
-                    <img src="Images/Liepaja.jpg" alt="Post Image">
-                    <h2>Aktualitāte 3</h2>
-                </div>
+<?php
+                require("faili/connect_db.php");
+
+                $piedavajumiVaicajums = "SELECT * FROM aktualitates ORDER BY Datums DESC LIMIT 3";
+                $atlasaPiedavajumi = mysqli_query($savienojums, $piedavajumiVaicajums);
+
+                if(mysqli_num_rows($atlasaPiedavajumi) > 0 ){
+                    while($ieraksts = mysqli_fetch_assoc($atlasaPiedavajumi)){
+                        echo "
+                        <div class='JA-post'>
+                            <img src='{$ieraksts['Attels']}' alt='Post Image'>
+                            <h2>{$ieraksts['Virsraksts']}</h2>
+                         </div>
+                    ";
+                    }
+                }
+?>
+
                 </div>
     </section>
 
